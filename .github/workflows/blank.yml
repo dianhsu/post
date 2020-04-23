@@ -37,11 +37,14 @@ jobs:
         git config --global user.email 'xudian.cn@gmail.com'
         git clone git@github.com:dianhsu/blog.git
         cp *.md blog/source/_posts/
+        pwd && ls blog/source/_posts/
+    - name: Publish to GitHub
+      run: |
         cd blog
+        pwd
         yarn install
         npm i -g hexo-cli
-    - name: Deploy to GitHub
-      run: |
+        hexo clean
         hexo generate
         hexo deploy
         
