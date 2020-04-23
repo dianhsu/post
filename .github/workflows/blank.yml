@@ -39,7 +39,7 @@ jobs:
         cp *.md blog/source/_posts/
         cd blog
         yarn install
-        yarn global add hexo-cli
+        npm i -g hexo-cli
     - name: Deploy to GitHub
       run: |
         hexo generate
